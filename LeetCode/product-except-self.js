@@ -6,7 +6,7 @@ var productExceptSelf = function (nums) {
     let output = [];
     let product = 0;
     let zero = 0;
-    
+
     for (let i = 0; i < nums.length; ++i) {
         if (nums[i] === 0) zero++; // count zeros
         if (i === 0 && zero === 0) product = 1; // to handle first index 0
@@ -59,6 +59,22 @@ var productExceptSelf2 = function (nums) {
 };
 
 
-let nums = [1, 2, 3, 4];
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 2, 3, 4, 5, 2, 5, 7];
+let nums2 = [1, 2, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 0, 3, 0, 4, 5];
 
-console.log(productExceptSelf2(nums))
+console.time();
+productExceptSelf(nums);
+console.timeEnd()
+
+
+console.time();
+productExceptSelf2(nums);
+console.timeEnd()
+
+console.time();
+productExceptSelf2(nums2);
+console.timeEnd()
+
+console.time();
+productExceptSelf(nums2);
+console.timeEnd()
