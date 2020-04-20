@@ -24,11 +24,11 @@ var bstFromPreorder = function (preorder) {
         else node[side] = new TreeNode(val);
     }
 
-    
+
     for (let i = 1; i < preorder.length; ++i) {
         rec(root, preorder[i]);
     }
-    
+
     return root;
 };
 
@@ -37,15 +37,15 @@ var bstFromPreorder = function (preorder) {
  * @param {number[]} preorder
  * @return {TreeNode}
  */
-var bstFromPreorder2 = function(preorder) {
+var bstFromPreorder2 = function (preorder) {
     var tree = new TreeNode(preorder[0]);
-    var putNode = function(val, node){
-        if(!node) {
+    var putNode = function (val, node) {
+        if (!node) {
             node = new TreeNode(val);
             return node;
         }
-        else{        
-            if(val < node.val){
+        else {
+            if (val < node.val) {
                 node.left = putNode(val, node.left);
             } else {
                 node.right = putNode(val, node.right);
@@ -53,10 +53,10 @@ var bstFromPreorder2 = function(preorder) {
         }
         return node;
     };
-    for(var i = 1; i<preorder.length; i++) {
+    for (var i = 1; i < preorder.length; i++) {
         tree = putNode(preorder[i], tree);
     }
-    
+
     return tree;
 };
 
