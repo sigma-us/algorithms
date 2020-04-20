@@ -17,16 +17,16 @@ function TreeNode(val) {
 var bstFromPreorder = function (preorder) {
     let root = new TreeNode(preorder[0]);
 
-    const rec = (node, val, side) => {
-        side = node.val > val ? 'left' : 'right';
+    const rec = (node, val) => {
+        let side = node.val > val ? 'left' : 'right';
 
-        if (node[side]) rec(node[side], val, side);
+        if (node[side]) rec(node[side], val);
         else node[side] = new TreeNode(val);
     }
 
     
     for (let i = 1; i < preorder.length; ++i) {
-        rec(root, preorder[i], preorder[i] < root.val ? 'left' : 'right');
+        rec(root, preorder[i]);
     }
     
     return root;
@@ -79,19 +79,21 @@ var bstFromPreorder2 = function(preorder) {
 let test = [8, 5, 1, 7, 10, 12];
 
 console.time()
-bstFromPreorder2(test);
+let a = bstFromPreorder(test);
 console.timeEnd()
 
-console.time()
-bstFromPreorder(test);
-console.timeEnd()
+console.log(a);
+
+// console.time()
+// bstFromPreorder(test);
+// console.timeEnd()
 
 
-console.time()
-bstFromPreorder2(test);
-console.timeEnd()
+// console.time()
+// bstFromPreorder2(test);
+// console.timeEnd()
 
 
-console.time()
-bstFromPreorder(test);
-console.timeEnd()
+// console.time()
+// bstFromPreorder(test);
+// console.timeEnd()
