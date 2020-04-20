@@ -33,6 +33,7 @@ var diameterOfBinaryTree2 = function(root) {
         return Math.max(left, right) + 1;
     }
     dfs(root);
+    console.log(root);
     return count;
 };
 
@@ -55,4 +56,4 @@ test.left.right.right = new TreeNode(9);
 test.left.right.right.right = new TreeNode(10);
 
 
-console.log(diameterOfBinaryTree(test));
+console.log(diameterOfBinaryTree2(test));
