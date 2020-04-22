@@ -5,12 +5,14 @@
  */
 var subarraySum = function (nums, k) {
     if (nums.length === 0) return 0;
+
     let map = {0:1};
     let result = 0;
     let sum = 0;
 
     for (let i = 0; i < nums.length; ++i) {
         sum += nums[i];
+        
         if(map[sum - k])  // there exist a key, that [hashmap-key  =  sum - k]
             result += map[sum - k];
         map[sum] = (map[sum] | 0) + 1;
