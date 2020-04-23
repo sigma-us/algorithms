@@ -12,11 +12,13 @@ var subarraySum = function (nums, k) {
 
     for (let i = 0; i < nums.length; ++i) {
         sum += nums[i];
-        
+
         if(map[sum - k])  // there exist a key, that [hashmap-key  =  sum - k]
             result += map[sum - k];
         map[sum] = (map[sum] | 0) + 1;
     }
+
+    console.log(map);
     return result;
 
 };
@@ -30,8 +32,8 @@ let k = 2;
 test = [0, 1, 1, 0, 1, 1, 1, 0]
 k = 2 // should be 9
 
-// test = [0, 20, 0, 20]
-// k = 20; // should be 6
+test = [0, 20, 0, 20]
+k = 20; // should be 6
 
 console.time();
 let a = subarraySum(test, k);
