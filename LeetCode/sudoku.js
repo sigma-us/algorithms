@@ -88,6 +88,7 @@ let isValidSudoku = function(board) {
                 continue;
             }
             const square = Math.floor(y / sq) * sq + Math.floor(x / sq);
+            console.log(square);
             if (cols[x] & 1 << num || rows[y] & 1 << num || squares[square] & 1 << num) {
                 return false;
             }
