@@ -27,30 +27,6 @@ function readLine() {
 // Complete the repeatedString function below.
 function repeatedString(s, n) {
     return (s.match(/a/g) || []).length * Math.floor(n/s.length) + (s.substring(0, n % s.length).match(/a/g) || []).length;
-
-    // let regex = new RegExp('^\a*$');
-    // if (regex.test(s)) return n;
-    // let map = {};
-
-    // let i = 0;
-    // let count = 0;
-    // for (let char of s) {
-    //     if (char === 'a') map[i] = ++count;
-    //     else map[i] = count;
-    //     ++i;
-    // }
-
-    // let rem = n % s.length;
-    // let len = Object.keys(map).length;
-    // let total = len * (n / s.length);
-
-    // if (rem === 0) return len * (n / s.length);
-    // else {
-    //     total = total.toString().split('.')[0];
-    //     console.log(map)
-
-    //     return +total + map[rem];
-    // }
 }
 
 function main() {
