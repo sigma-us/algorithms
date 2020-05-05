@@ -17,6 +17,7 @@ function convert(angle, mag) {
     let a = adjacent(angle, mag);
     let o = opposite(angle, mag);
     console.log(a, o);
+    console.log(a**2 + o**2, mag**2)
 
     return [a, o]
 }
@@ -24,6 +25,12 @@ function convert(angle, mag) {
 function vectorAdd(v1, v2) {
     let v3 = [v1[0]+v2[0], v1[1]+v2[1]];
     console.log(v3);
+
+    return v3;
+}
+
+function vectorSub(v1, v2) {
+    let v3 = [v1[0] - v2[0], v1[1] - v2[1]];
 
     return v3;
 }
