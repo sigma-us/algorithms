@@ -22,8 +22,7 @@ func getTotalX(a []int32, b []int32) int32 {
 	// Write your code here
 	current := a[len(a)-1]
 	end := b[0]
-	arr := []int32{}
-	count := 0
+	count := int32(0)
 
 	for current <= end {
 		add := true
@@ -49,13 +48,12 @@ func getTotalX(a []int32, b []int32) int32 {
 
 		if add == true {
 			count++
-			arr = append(arr, current)
 		}
 
 		current++
 	}
 
-	fmt.Println(arr)
+	return count
 
 }
 
