@@ -36,7 +36,9 @@ function vectorSub(v1, v2) {
 }
 
 
-let v1 = convert(40, 5);
-let v2 = convert(100, 6);
+let v1 = convert(0, 1);
+let v2 = convert(90, 1);
 
 let v3 = vectorAdd(v1, v2);
+
+let v4 = vectorAdd(v3, convert(180, 2))
